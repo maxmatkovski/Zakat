@@ -9,11 +9,11 @@ enum AppTab: String, CaseIterable {
 
     var icon: String {
         switch self {
-        case .dashboard:  "square.grid.2x2.fill"
-        case .add:        "plus.circle.fill"
-        case .charities:  "heart.fill"
-        case .insights:   "chart.bar.fill"
-        case .impact:     "star.fill"
+        case .dashboard:  return "square.grid.2x2.fill"
+        case .add:        return "plus.circle.fill"
+        case .charities:  return "heart.fill"
+        case .insights:   return "chart.bar.fill"
+        case .impact:     return "star.fill"
         }
     }
 }

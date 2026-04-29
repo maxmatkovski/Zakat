@@ -33,6 +33,8 @@ let tzCategories = [
 func currencyString(_ value: Double) -> String {
     let formatter = NumberFormatter()
     formatter.numberStyle = .currency
+    formatter.currencyCode = "USD"
+    formatter.currencySymbol = "$"
     formatter.maximumFractionDigits = 0
     return formatter.string(from: NSNumber(value: value)) ?? "$0"
 }

@@ -2,7 +2,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct TzedakaApp: App {
+struct Test_AppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -30,10 +30,10 @@ struct ImpactView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text("Lifetime Impact")
                 .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(Color.tzSecondary)
+                .foregroundStyle(.white.opacity(0.7))
             Text(currencyString(totalGiven))
                 .font(.system(size: 38, weight: .bold))
-                .foregroundStyle(Color.tzPrimary)
+                .foregroundStyle(.white)
             HStack(spacing: 20) {
                 statPill(icon: "arrow.up.right", value: "\(donations.count) donations")
                 statPill(icon: "building.2.fill", value: "\(uniqueCharities) charities")

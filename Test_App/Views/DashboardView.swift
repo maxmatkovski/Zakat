@@ -198,7 +198,7 @@ func categoryIcon(_ category: String) -> String {
     case "Food & Hunger":   return "fork.knife"
     case "Medical":         return "cross.fill"
     case "Disaster Relief": return "house.fill"
-    case "Religious":       return "star.of.david.fill"
+    case "Religious":       return "building.columns.fill"
     case "Environment":     return "leaf.fill"
     case "Animal Welfare":  return "pawprint.fill"
     case "Arts & Culture":  return "paintbrush.fill"

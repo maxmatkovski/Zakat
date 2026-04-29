@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		501B20ED2FA256C500E4DCDB /* Test_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		501B20ED2FA256C500E4DCDB /* Tzedaka Charity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tzedaka Charity.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -40,7 +40,7 @@
 		501B20EE2FA256C500E4DCDB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				501B20ED2FA256C500E4DCDB /* Test_App.app */,
+				501B20ED2FA256C500E4DCDB /* Tzedaka Charity.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +67,7 @@
 			packageProductDependencies = (
 			);
 			productName = Test_App;
-			productReference = 501B20ED2FA256C500E4DCDB /* Test_App.app */;
+			productReference = 501B20ED2FA256C500E4DCDB /* Tzedaka Charity.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -251,6 +251,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6X8M8D8XG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -264,7 +265,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "OME.Test-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tzedaka Charity";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -282,6 +283,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6X8M8D8XG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,7 +297,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "OME.Test-App";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Tzedaka Charity";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
