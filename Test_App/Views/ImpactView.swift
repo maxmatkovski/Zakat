@@ -3,8 +3,9 @@ import SwiftData
 
 struct ImpactView: View {
     @Query(sort: \Donation.date, order: .reverse) private var donations: [Donation]
+    @Environment(\.modelContext) private var context
     @AppStorage("goalIncome") private var goalIncome: Double = 0
-    @AppStorage("goalPercent") private var goalPercent: Double = 2.5
+    @AppStorage("goalPercent") private var goalPercent: Double = 10
     @State private var showGoalSheet = false
 
     private var totalGiven: Double { donations.reduce(0) { $0 + $1.amount } }
@@ -74,7 +75,7 @@ struct ImpactView: View {
         Button { showGoalSheet = true } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Zakat Goal")
+                    Text("Giving Goal")
                         .font(.system(size: 13, weight: .medium))
                         .foregroundStyle(Color.tzSecondary)
                     if goalIncome > 0 {
@@ -82,7 +83,7 @@ struct ImpactView: View {
                             .font(.system(size: 15, weight: .semibold))
                             .foregroundStyle(Color.tzPrimary)
                     } else {
-                        Text("Set your annual Zakat obligation")
+                        Text("Set your annual giving goal")
                             .font(.system(size: 15, weight: .medium))
                             .foregroundStyle(Color.tzPrimary)
                     }
@@ -128,7 +129,7 @@ struct ImpactView: View {
             } else {
                 VStack(spacing: 0) {
                     ForEach(donations) { donation in
-                        DonationRow(donation: donation)
+                        DonationRow(donation: donation) { context.delete(donation) }
                         if donation.id != donations.last?.id {
                             Divider().padding(.horizontal, 16)
                         }
@@ -169,40 +170,38 @@ struct ImpactNoteCard: View {
 
 struct GoalSheet: View {
     @AppStorage("goalIncome") private var goalIncome: Double = 0
-    @AppStorage("goalPercent") private var goalPercent: Double = 2.5
+    @AppStorage("goalPercent") private var goalPercent: Double = 10
     @Environment(\.dismiss) private var dismiss
 
     @State private var incomeText = ""
-    @State private var percentText = "2.5"
+    @State private var percentText = "10"
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("Annual Wealth (Nisab)") {
+                Section("Annual Income") {
                     HStack {
                         Text("$")
                         TextField("e.g. 75000", text: $incomeText)
                             .keyboardType(.numberPad)
                     }
                 }
-                Section("Zakat Rate") {
+                Section("Giving Percentage") {
                     HStack {
-                        TextField("2.5", text: $percentText)
+                        TextField("e.g. 10", text: $percentText)
                             .keyboardType(.decimalPad)
-                        Text("% (standard Zakat is 2.5%)")
-                            .foregroundStyle(Color.tzSecondary)
-                            .font(.system(size: 13))
+                        Text("%")
                     }
                 }
                 if let income = Double(incomeText), let pct = Double(percentText), pct > 0 {
-                    Section("Your Zakat") {
-                        Text("You owe \(currencyString(income * pct / 100)) in Zakat this year")
+                    Section("Goal") {
+                        Text("You aim to give \(currencyString(income * pct / 100)) per year")
                             .foregroundStyle(Color.tzPrimary)
                             .fontWeight(.medium)
                     }
                 }
             }
-            .navigationTitle("Zakat Goal")
+            .navigationTitle("Giving Goal")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
@@ -211,7 +210,7 @@ struct GoalSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
                         goalIncome = Double(incomeText) ?? 0
-                        goalPercent = Double(percentText) ?? 2.5
+                        goalPercent = Double(percentText) ?? 10
                         dismiss()
                     }
                     .fontWeight(.semibold)
