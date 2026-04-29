@@ -1,12 +1,12 @@
 import SwiftUI
 
 extension Color {
-    static let tzPrimary    = Color(red: 0.102, green: 0.231, blue: 0.431)
-    static let tzGold       = Color(red: 0.769, green: 0.588, blue: 0.165)
-    static let tzBackground = Color(red: 0.969, green: 0.953, blue: 0.937)
+    static let tzPrimary    = Color(red: 0.094, green: 0.369, blue: 0.216)  // Deep Islamic green
+    static let tzGold       = Color(red: 0.796, green: 0.647, blue: 0.169)  // Gold
+    static let tzBackground = Color(red: 0.945, green: 0.957, blue: 0.945)  // Soft green-white
     static let tzCard       = Color.white
     static let tzSecondary  = Color(red: 0.557, green: 0.557, blue: 0.576)
-    static let tzSeparator  = Color(red: 0.898, green: 0.882, blue: 0.863)
+    static let tzSeparator  = Color(red: 0.878, green: 0.894, blue: 0.878)
     static let tzSuccess    = Color(red: 0.180, green: 0.490, blue: 0.369)
 }
 
@@ -26,8 +26,8 @@ extension View {
 }
 
 let tzCategories = [
-    "Education", "Food & Hunger", "Medical", "Disaster Relief",
-    "Religious", "Environment", "Animal Welfare", "Arts & Culture", "Other"
+    "Zakat", "Sadaqah", "Waqf", "Orphan Support",
+    "Education", "Food & Hunger", "Medical", "Disaster Relief", "Other"
 ]
 
 func currencyString(_ value: Double) -> String {

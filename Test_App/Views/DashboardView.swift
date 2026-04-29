@@ -5,7 +5,7 @@ struct DashboardView: View {
     var openSidebar: () -> Void
     @Query(sort: \Donation.date, order: .reverse) private var donations: [Donation]
     @AppStorage("goalIncome") private var goalIncome: Double = 0
-    @AppStorage("goalPercent") private var goalPercent: Double = 10
+    @AppStorage("goalPercent") private var goalPercent: Double = 2.5
 
     private var currentYear: Int { Calendar.current.component(.year, from: .now) }
 
@@ -48,7 +48,7 @@ struct DashboardView: View {
             Text(greetingText())
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(Color.tzSecondary)
-            Text("Your giving journey")
+            Text("Your Zakat journey")
                 .font(.system(size: 26, weight: .bold))
                 .foregroundStyle(Color.tzPrimary)
         }
@@ -75,10 +75,10 @@ struct DashboardView: View {
         VStack(alignment: .leading, spacing: 12) {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Giving Goal")
+                    Text("Zakat Goal")
                         .font(.system(size: 13, weight: .medium))
                         .foregroundStyle(Color.tzSecondary)
-                    Text("\(Int(goalPercent))% of income · \(currencyString(goalTarget))")
+                    Text("2.5% of wealth · \(currencyString(goalTarget))")
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(Color.tzPrimary)
                 }
@@ -194,14 +194,14 @@ struct DonationRow: View {
 
 func categoryIcon(_ category: String) -> String {
     switch category {
+    case "Zakat":           return "moon.stars.fill"
+    case "Sadaqah":         return "heart.fill"
+    case "Waqf":            return "building.columns.fill"
+    case "Orphan Support":  return "person.2.fill"
     case "Education":       return "book.fill"
     case "Food & Hunger":   return "fork.knife"
     case "Medical":         return "cross.fill"
     case "Disaster Relief": return "house.fill"
-    case "Religious":       return "building.columns.fill"
-    case "Environment":     return "leaf.fill"
-    case "Animal Welfare":  return "pawprint.fill"
-    case "Arts & Culture":  return "paintbrush.fill"
-    default:                return "heart.fill"
+    default:                return "gift.fill"
     }
 }

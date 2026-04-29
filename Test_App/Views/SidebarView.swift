@@ -30,10 +30,10 @@ struct SidebarView: View {
     private var header: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(spacing: 10) {
-                Image(systemName: "star.of.david.fill")
+                Image(systemName: "moon.stars.fill")
                     .font(.system(size: 22))
                     .foregroundStyle(Color.tzGold)
-                Text("Tzedaka")
+                Text("Zakat")
                     .font(.system(size: 22, weight: .bold))
                     .foregroundStyle(.white)
             }
@@ -81,7 +81,7 @@ struct SidebarView: View {
     }
 
     private var footer: some View {
-        Text("Tzedaka · v1.0")
+        Text("Zakat · v1.0")
             .font(.system(size: 11))
             .foregroundStyle(.white.opacity(0.3))
             .padding(.horizontal, 20)
